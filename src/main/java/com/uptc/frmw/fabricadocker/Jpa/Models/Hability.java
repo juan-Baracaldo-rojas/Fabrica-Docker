@@ -2,17 +2,23 @@ package com.uptc.frmw.fabricadocker.Jpa.Models;
 
 import jakarta.persistence.*;
 
-    @Entity
-    @Table(name = "habilidades")
+import java.util.List;
+
+@Entity
+    @Table(name = "habilidad")
 public class Hability {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Column(name = "IdHabilidades")
+        @Column(name = "IdHabilidad")
         private long idHability;
-        @Column(name="nombreHabilidades")
+        @Column(name="nombreHabilidad")
         private String name;
 
-        public Hability() {
+    @ManyToMany(mappedBy = "habilities")
+    private List<Worker> workers;
+
+
+    public Hability() {
         }
 
         public long getIdHability() {
@@ -30,8 +36,16 @@ public class Hability {
         public void setName(String name) {
             this.name = name;
         }
+/*
+    public List<Worker> getWorkers() {
+        return workers;
+    }
 
-        @Override
+    public void setWorkers(List<Worker> workers) {
+        this.workers = workers;
+    }
+*/
+    @Override
         public String toString() {
             return "Hability{" +
                     "idHability=" + idHability +

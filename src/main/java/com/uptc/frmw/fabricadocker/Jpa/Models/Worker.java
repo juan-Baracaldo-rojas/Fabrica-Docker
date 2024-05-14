@@ -3,8 +3,9 @@ package com.uptc.frmw.fabricadocker.Jpa.Models;
 import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
-   @Entity
+@Entity
     @Table(name = "trabajador")
 public class Worker {
 
@@ -21,7 +22,15 @@ public class Worker {
         @Column(name= "Direccion")
         private String adress;
 
-        public Worker() {
+   @ManyToMany
+    @JoinTable(
+            name = "trabajadorhabilidad",
+            joinColumns = @JoinColumn(name = "IdHabilidad"),
+            inverseJoinColumns = @JoinColumn(name = "IdTrabajador")
+    )
+    private List<Hability> habilities;
+
+    public Worker() {
         }
 
         public long getIdWorker() {
@@ -63,8 +72,16 @@ public class Worker {
         public void setAdress(String adress) {
             this.adress = adress;
         }
+/*
+    public List<Hability> getHabilities() {
+        return habilities;
+    }
 
-       @Override
+    public void setHabilities(List<Hability> habilities) {
+        this.habilities = habilities;
+    }
+*/
+    @Override
        public String toString() {
            return "Worker{" +
                    "idWorker=" + idWorker +
