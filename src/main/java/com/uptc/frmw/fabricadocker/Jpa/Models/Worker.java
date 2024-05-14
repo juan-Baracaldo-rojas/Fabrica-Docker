@@ -72,7 +72,7 @@ public class Worker {
         public void setAdress(String adress) {
             this.adress = adress;
         }
-/*
+
     public List<Hability> getHabilities() {
         return habilities;
     }
@@ -80,7 +80,7 @@ public class Worker {
     public void setHabilities(List<Hability> habilities) {
         this.habilities = habilities;
     }
-*/
+
     @Override
        public String toString() {
            return "Worker{" +
