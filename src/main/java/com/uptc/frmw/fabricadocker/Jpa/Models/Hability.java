@@ -14,8 +14,8 @@ public class Hability {
         @Column(name="nombreHabilidad")
         private String name;
 
-    @ManyToMany(mappedBy = "habilities")
-    private List<Worker> workers;
+ //   @ManyToMany(mappedBy = "habilities")
+
 
 
     public Hability() {
@@ -36,7 +36,7 @@ public class Hability {
         public void setName(String name) {
             this.name = name;
         }
-
+/*
     public List<Worker> getWorkers() {
         return workers;
     }
@@ -44,7 +44,7 @@ public class Hability {
     public void setWorkers(List<Worker> workers) {
         this.workers = workers;
     }
-
+*/
     @Override
         public String toString() {
             return "Hability{" +

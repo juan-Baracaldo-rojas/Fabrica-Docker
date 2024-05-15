@@ -34,7 +34,7 @@ public class ServicesWorker {
             workerBd.setName(worker.getName());
             workerBd.setLast_name(worker.getLast_name());
             workerBd.setBoringDate(worker.getBoringDate());
-            workerBd.setHabilities(worker.getHabilities());
+         //   workerBd.setHabilities(worker.getHabilities());
             workerBd.setAdress(worker.getAdress());
             return saveWorker(workerBd);
         }

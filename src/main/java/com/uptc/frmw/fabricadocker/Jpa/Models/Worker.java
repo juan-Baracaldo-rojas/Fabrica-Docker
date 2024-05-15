@@ -21,14 +21,17 @@ public class Worker {
         private Date boringDate;
         @Column(name= "Direccion")
         private String adress;
-
+/*
    @ManyToMany
     @JoinTable(
             name = "trabajadorhabilidad",
-            joinColumns = @JoinColumn(name = "IdHabilidad"),
-            inverseJoinColumns = @JoinColumn(name = "IdTrabajador")
+            joinColumns = @JoinColumn(name = "IdTrabajador"),
+            inverseJoinColumns = @JoinColumn(name = "IdHabilidad")
     )
+
     private List<Hability> habilities;
+
+    */
 
     public Worker() {
         }
@@ -72,7 +75,7 @@ public class Worker {
         public void setAdress(String adress) {
             this.adress = adress;
         }
-
+/*
     public List<Hability> getHabilities() {
         return habilities;
     }
@@ -80,7 +83,7 @@ public class Worker {
     public void setHabilities(List<Hability> habilities) {
         this.habilities = habilities;
     }
-
+*/
     @Override
        public String toString() {
            return "Worker{" +
