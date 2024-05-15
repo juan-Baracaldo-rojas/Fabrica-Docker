@@ -17,19 +17,19 @@ public class ControllerWorker {
         return servicesWorker.findAll();
     }
     @GetMapping("/{idWorker}")
-    public  Worker findWorkerById(Long idWorker){
+    public  Worker findWorkerById(@PathVariable Long idWorker){
         return servicesWorker.findWorkerById(idWorker);
     }
     @DeleteMapping("/{idWorker}")
-    public void deleteWorker(long idWorker){
+    public void deleteWorker(@PathVariable long idWorker){
         servicesWorker.deleteWorker(idWorker);
     }
     @PostMapping()
-    public Worker saveWorker(Worker worker){
+    public Worker saveWorker(@RequestBody    Worker worker){
         return servicesWorker.saveWorker(worker);
     }
     @PutMapping("/{idWorker}")
-    public  Worker updateWorker(Long idWorker,Worker worker){
+    public  Worker updateWorker( @PathVariable Long idWorker, @RequestBody Worker worker){
       return servicesWorker.updateWorker(idWorker,worker);
     }
 

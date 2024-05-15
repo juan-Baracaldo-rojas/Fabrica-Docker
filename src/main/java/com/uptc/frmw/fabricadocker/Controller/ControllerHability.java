@@ -29,8 +29,8 @@ public class ControllerHability {
        return servicesHability.updateHability(id,hability);
     }
     @DeleteMapping("/{IdHabilidad}")
-    public void deleteHability(long idHability){
-        servicesHability.deleteHability(idHability);
+    public void deleteHability(@PathVariable long IdHabilidad){
+        servicesHability.deleteHability(IdHabilidad);
     }
 
 }

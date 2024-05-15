@@ -21,7 +21,7 @@ public class ServicesWorker {
         return repositoryWorker.findById(idWorker).orElse(null);
     }
 
-    public void deleteWorker(long idWorker){
+    public void deleteWorker(Long idWorker){
         repositoryWorker.deleteById(idWorker);
     }
     public Worker saveWorker(Worker worker){

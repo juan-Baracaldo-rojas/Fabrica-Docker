@@ -6,12 +6,12 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-    @Table(name = "trabajador")
+    @Table(name = "Trabajador")
 public class Worker {
 
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
-        @Column(name = "IdTrabajador")
+        @Column(name = "ID_TRABAJADOR")
         private long idWorker;
         @Column(name = "Nombre")
         private String name;
@@ -21,7 +21,7 @@ public class Worker {
         private Date boringDate;
         @Column(name= "Direccion")
         private String adress;
-/*
+
    @ManyToMany
     @JoinTable(
             name = "trabajadorhabilidad",
@@ -31,7 +31,7 @@ public class Worker {
 
     private List<Hability> habilities;
 
-    */
+
 
     public Worker() {
         }
@@ -75,7 +75,7 @@ public class Worker {
         public void setAdress(String adress) {
             this.adress = adress;
         }
-/*
+
     public List<Hability> getHabilities() {
         return habilities;
     }
@@ -83,7 +83,7 @@ public class Worker {
     public void setHabilities(List<Hability> habilities) {
         this.habilities = habilities;
     }
-*/
+
     @Override
        public String toString() {
            return "Worker{" +
