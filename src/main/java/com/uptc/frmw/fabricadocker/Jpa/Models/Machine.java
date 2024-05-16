@@ -11,13 +11,13 @@ import java.util.Date;
 @Table(name ="MAQUINA")
 public class Machine {
     @Id
-    @Column(name = "NumeroSerie")
+    @Column(name = "numero_serie")
     private Integer serialNumber;
     @Column(name = "marca")
     private String brand;
     @Column(name = "modelo")
     private String model;
-    @Column(name = "fechaCompra")
+    @Column(name = "fecha_compra")
     private Date shoppingDate;
 
     public Machine() {

@@ -8,13 +8,13 @@ import java.util.List;
 @Table(name = "Cliente")
 public class Client {
     @Id
-    @Column(name = "idClient")
+    @Column(name = "id_cliente")
     private Integer idClient;
     @Column(name = "direccion")
     private String address;
-    @Column(name = "numeroTelefonico")
+    @Column(name = "numero_telefonico")
     private String numberPhone;
-    @Column(name = "nombreContacto")
+    @Column(name = "nombre_contacto")
     private String contactName;
     @OneToMany(mappedBy = "client")
     private List<ShoppingOrder> shoppingOrders;
