@@ -21,6 +21,8 @@ public class Worker {
         private Date boringDate;
         @Column(name= "Direccion")
         private String adress;
+        @ManyToMany(mappedBy = "workers")
+        private List<Machine> machines;
 
    @ManyToMany
     @JoinTable(
@@ -36,7 +38,15 @@ public class Worker {
     public Worker() {
         }
 
-        public long getIdWorker() {
+    public List<Machine> getMachines() {
+        return machines;
+    }
+
+    public void setMachines(List<Machine> machines) {
+        this.machines = machines;
+    }
+
+    public long getIdWorker() {
             return idWorker;
         }
 
