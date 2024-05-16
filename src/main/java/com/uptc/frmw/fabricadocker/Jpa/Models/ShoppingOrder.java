@@ -5,19 +5,19 @@ import jakarta.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name = "OrdenCompra")
+@Table(name = "Orden_Compra")
 public class ShoppingOrder {
     @Id
-    @Column(name = "numeroOrden")
+    @Column(name = "numero_orden")
     private Integer numberOrder;
-    @Column(name = "fechaCompra")
+    @Column(name = "fecha_compra")
     private Date shoppingDate;
-    @Column(name = "fechaEntradaEsperada")
+    @Column(name = "fecha_entrada_esperada")
     private Date expetedDeliveryDate;
-    @Column(name = "fechaEntregaReal")
+    @Column(name = "fecha_entrega_real")
     private Date realDeliveryDate;
     @ManyToOne
-    @JoinColumn(name = "idClinet", nullable = false)
+    @JoinColumn(name = "id_cliente", nullable = false)
     private Client client;
 
     public ShoppingOrder() {
