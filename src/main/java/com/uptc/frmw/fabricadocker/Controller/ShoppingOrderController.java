@@ -2,10 +2,9 @@ package com.uptc.frmw.fabricadocker.Controller;
 
 import com.uptc.frmw.fabricadocker.Jpa.Models.ShoppingOrder;
 import com.uptc.frmw.fabricadocker.Services.ShoppingOrderService;
+import org.hibernate.annotations.UpdateTimestamp;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -18,5 +17,25 @@ public class ShoppingOrderController {
     @GetMapping
     public List<ShoppingOrder> getAllShoppingOrder() {
         return shoppingOrderService.findAllShoppingOrder();
+    }
+
+    @GetMapping("/{idShopping}")
+    public ShoppingOrder getShoppingById (@PathVariable Integer idShopping) {
+        return shoppingOrderService.findBiIdShopping(idShopping);
+    }
+
+    @DeleteMapping("/{idShopping}")
+    public void deleteShopping (@PathVariable Integer idShopping) {
+        shoppingOrderService.deleteShopping(idShopping);
+    }
+
+    @PostMapping
+    public ShoppingOrder saveShopping (@RequestBody ShoppingOrder shoppingOrder) {
+        return shoppingOrderService.saveShopping(shoppingOrder);
+    }
+
+    @PutMapping("/{idShopping}")
+    public  ShoppingOrder updateShoppingOrder (@PathVariable Integer idShopping, @RequestBody ShoppingOrder shoppingOrder) {
+        return shoppingOrderService.updateShopping(idShopping, shoppingOrder);
     }
 }

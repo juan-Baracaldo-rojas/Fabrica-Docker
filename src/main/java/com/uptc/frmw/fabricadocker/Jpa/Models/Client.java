@@ -1,5 +1,6 @@
 package com.uptc.frmw.fabricadocker.Jpa.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -16,7 +17,8 @@ public class Client {
     private String numberPhone;
     @Column(name = "nombre_contacto")
     private String contactName;
-    @OneToMany(mappedBy = "client")
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
     private List<ShoppingOrder> shoppingOrders;
 
     public Client() {
