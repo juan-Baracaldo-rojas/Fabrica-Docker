@@ -1,8 +1,14 @@
 package com.uptc.frmw.fabricadocker.Jpa.Repositories;
 
-import com.uptc.frmw.fabricadocker.Jpa.Models.Machine;
+
 import com.uptc.frmw.fabricadocker.Jpa.Models.Material;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface MaterialRespository extends JpaRepository<Material, Integer> {
+
+@Repository
+public interface MaterialRepository extends JpaRepository <Material, Integer> {
 }
+
+
+
