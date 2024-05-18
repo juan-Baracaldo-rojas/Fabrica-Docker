@@ -1,5 +1,6 @@
 package com.uptc.frmw.fabricadocker.Jpa.Models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.Date;
@@ -16,6 +17,7 @@ public class Material {
     private String nombreMaterial;
 
     @OneToMany(mappedBy = "material")
+    @JsonIgnore
     private List<ProductType> productTypes;
 
     public Material() {
