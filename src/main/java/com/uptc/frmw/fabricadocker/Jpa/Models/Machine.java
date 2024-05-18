@@ -1,11 +1,9 @@
 package com.uptc.frmw.fabricadocker.Jpa.Models;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.util.Date;
+import java.util.List;
 
 @Entity
 @Table(name ="MAQUINA")
@@ -20,7 +18,21 @@ public class Machine {
     @Column(name = "fecha_compra")
     private Date shoppingDate;
 
+    @ManyToMany(cascade = CascadeType.PERSIST)
+    @JoinTable(name = "Maquina_Trabajador",
+            joinColumns = @JoinColumn(name = "numero_serie"),
+            inverseJoinColumns = @JoinColumn(name = "ID_TRABAJADOR"))
+    private List<Worker> workers;
+
     public Machine() {
+    }
+
+    public List<Worker> getWorkers() {
+        return workers;
+    }
+
+    public void setWorkers(List<Worker> workers) {
+        this.workers = workers;
     }
 
     public Integer getSerialNumber() {
